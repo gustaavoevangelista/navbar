@@ -1,21 +1,27 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar.js'
+import Navbar from './components/Navbar/Navbar'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
 import Careers from './pages/Careers'
+import Home from './pages/Careers'
+import {Route , Routes} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
-      <About />
-      <Services />
-      <Careers />
-      <Contacts />
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/careers' element={<Careers />} />
+          <Route path='/contact' element={<Contacts />} />
+        </Routes>
 
-      <footer>Evangelista Consulting &copy; 2022</footer>
-    </div>
+      </div>
+    </>
   )
 }
 
